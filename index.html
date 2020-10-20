@@ -19,6 +19,16 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
+				<h3 style="text-transform: none;">Oslo Kotlin Meetup</h3>
+				<h4>20.10-2020</h4>
+				<br />
+				<ul>
+					<li style="margin-bottom: 15px">Domain Specific Languages - Marie Katrine Ekeberg</li>
+					<li style="margin-bottom: 15px">kscript, scripting with Kotlin - Anders Mikkelsen</li>
+					<li>Functional programming with Arrow - Jarle Hansen</li>
+				</ul>
+			</section>
+			<section>
 				<img src="images/arrow-logo-dark.png" style="border: 1px solid black" />
 				<h3 style="text-transform: none;">Jarle Hansen</h3>
 				<h4 style="text-transform: none;"><a href="mailto:jarle.hansen@systek.no">jarle.hansen@systek.no</a></h4>
@@ -53,116 +63,125 @@
 					<ul>
 						<li>The two most relevant FP libraries for Kotlin in 2017</li>
 					</ul>
-					<li>The goal [...] a single library that would provide users with a unified and
-						reasonable approach to typed FP that avoids issues related to split libraries and binary incompatibilities
-						between data types and type classes for users.</li>
+					<li>Functional companion to Kotlin's Standard Library.</li>
 				</ul>
-				<section>
-					<h3>Multiple modules</h3>
+			</section>
+			</section>
+			<section>
+				<h3>Multiple modules</h3>
+				<ul>
+					<li>core</li>
+					<li>fx</li>
+					<li>optics</li>
+					<li>meta</li>
+					<li>Any several incubator...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Examples</h3>
+			</section>
+			<section>
+				<h4>Option is deprecated</h4>
+				<p>Option will be deleted soon as it promotes the wrong message of using a slower and memory unfriendly
+					abstraction when the lang provides a better one.</p>
+			</section>
+			<section>
+				<iframe data-src="https://arrow-kt.io/docs/quickstart/setup/" data-preload width="1000px"
+					height="700px"></iframe>
+			</section>
+			<section>
+				<iframe data-src="https://arrow-kt.io/" data-preload width="1000px" height="700px" scrolling="no"></iframe>
+			</section>
+			<section>
+				<h4>Either</h4>
+				<p>Either is used to short-circuit a computation upon the first error</p>
+				<p>By convention, the right side of an Either is used to hold successful values.</p>
+			</section>
+			<section>
+				<iframe data-src="http://localhost:9001" data-preload width="1100px" height="500px" scrolling="no"></iframe>
+			</section>
+			<section>
+				<iframe data-src="http://localhost:9001#2_either" data-preload width="1100px" height="500px"
+					scrolling="no"></iframe>
+			</section>
+			<section>
+				<iframe data-src="http://localhost:9001#3_either" data-preload width="1100px" height="500px"
+					scrolling="no"></iframe>
+			</section>
+			<section>
+				<iframe data-src="https://arrow-kt.io/docs/apidocs/arrow-core-data/arrow.core/-either/#functions" data-preload
+					width="1000px" height="700px"></iframe>
+			</section>
+			<section>
+				<h4>Arrow fx</h4>
+				<p>A next-generation Typed FP Effects Library that makes tracked effectful programming first class in Kotlin,
+					and is build on top of Kotlin’s suspend system.</p>
+			</section>
+			<section>
+				<iframe data-src="https://arrow-kt.io/docs/apidocs/arrow-fx-coroutines/arrow.fx.coroutines/race-n.html"
+					data-preload width="1000px" height="600px"></iframe>
+			</section>
+			<section>
+				<iframe data-src="http://localhost:9001#4_race" data-preload width="1100px" height="600px"
+					scrolling="no"></iframe>
+			</section>
+			<section>
+				<h3>Arrow fx</h3>
+				<p>Notice that <span style="font-style: italic">raceN(...)</span> returns <span
+						style="font-style: italic">Either</span></p>
+			</section>
+			<section>
+				<h3>Arrow optics</h3>
+				<p>Optics are essentially abstractions to update immutable data structures in an elegant way.</p>
+			</section>
+			<section>
+				<h3>Lens</h3>
+				<p>A Lens is an optic that can focus into a structure and get, modify, or set its focus (target).</p>
+				<p>Lenses can be generated for a data class by the <span style="font-style: italic;">@optics</span>
+					annotation.
+				</p>
+			</section>
+			<section>
+				<iframe data-src="https://arrow-kt.io/docs/optics/dsl/" data-preload width="1000px" height="600px"></iframe>
+			</section>
+			<section>
+				<iframe data-src="http://localhost:9001#5_optics" data-preload width="1100px" height="600px"
+					scrolling="no"></iframe>
+			</section>
+			<section>
+				<p>Λrrow Meta is a meta-programming library that cooperates with the Kotlin compiler in all its phases,
+					bringing
+					its full power to the community.</p>
+				<img src="images/arrow-meta.gif" />
+			</section>
+			<section>
+				<h4>My experience</h4>
+				<ul>
+					<li>A <span style="font-weight: bold">lot</span> of functionality</li>
+					<li>Multiple classes/functions named the same and are placed in different modules</li>
 					<ul>
-						<li>core</li>
-						<li>fx</li>
-						<li>optics</li>
-						<li>meta</li>
-						<li>Any several incubator...</li>
+						<li>Can be confusing</li>
+						<li>For example <span style="font-style: italic;">raceN</span></li>
 					</ul>
-				</section>
-				<section>
-					<h3>Examples</h3>
-				</section>
-				<section>
-					<h4>Option is deprecated</h4>
-					<p>Option will be deleted soon as it promotes the wrong message of using a slower and memory unfriendly
-						abstraction when the lang provides a better one.</p>
-				</section>
-				<section>
-					<iframe data-src="https://arrow-kt.io/docs/quickstart/setup/" data-preload width="1000px"
-						height="700px"></iframe>
-				</section>
-				<section>
-					<iframe data-src="https://arrow-kt.io/" data-preload width="1000px" height="700px" scrolling="no"></iframe>
-				</section>
-				<section>
-					<h4>Either</h4>
-					<p>Either is used to short-circuit a computation upon the first error</p>
-					<p>By convention, the right side of an Either is used to hold successful values.</p>
-				</section>
-				<section>
-					<iframe data-src="http://localhost:9001" data-preload width="1100px" height="500px" scrolling="no"></iframe>
-				</section>
-				<section>
-					<iframe data-src="http://localhost:9001#2_either" data-preload width="1100px" height="500px"
-						scrolling="no"></iframe>
-				</section>
-				<section>
-					<iframe data-src="http://localhost:9001#3_either" data-preload width="1100px" height="500px"
-						scrolling="no"></iframe>
-				</section>
-				<section>
-					<iframe data-src="https://arrow-kt.io/docs/apidocs/arrow-core-data/arrow.core/-either/#functions" data-preload
-						width="1000px" height="700px"></iframe>
-				</section>
-				<section>
-					<h4>Arrow fx</h4>
-					<p>A next-generation Typed FP Effects Library that makes tracked effectful programming first class in Kotlin,
-						and is build on top of Kotlin’s suspend system.</p>
-				</section>
-				<section>
-					<iframe data-src="https://arrow-kt.io/docs/apidocs/arrow-fx-coroutines/arrow.fx.coroutines/race-n.html"
-						data-preload width="1000px" height="600px"></iframe>
-				</section>
-				<section>
-					<iframe data-src="http://localhost:9001#4_race" data-preload width="1100px" height="600px"
-						scrolling="no"></iframe>
-				</section>
-				<section>
-					<h3>Arrow fx</h3>
-					<p>Notice that <span style="font-style: italic">raceN(...)</span> returns <span
-							style="font-style: italic">Either</span></p>
-				</section>
-				<section>
-					<h3>Arrow optics</h3>
-					<p>Optics are essentially abstractions to update immutable data structures in an elegant way.</p>
-				</section>
-				<section>
-					<h3>Lens</h3>
-					<p>A Lens is an optic that can focus into a structure and get, modify, or set its focus (target).</p>
-					<p>Lenses can be generated for a data class by the <span style="font-style: italic;">@optics</span>
-						annotation.
-					</p>
-				</section>
-				<section>
-					<iframe data-src="https://arrow-kt.io/docs/optics/dsl/" data-preload width="1000px" height="600px"></iframe>
-				</section>
-				<section>
-					<iframe data-src="http://localhost:9001#5_optics" data-preload width="1100px" height="600px"
-						scrolling="no"></iframe>
-				</section>
-				<section>
-					<p>Λrrow Meta is a meta-programming library that cooperates with the Kotlin compiler in all its phases,
-						bringing
-						its full power to the community.</p>
-					<img src="images/arrow-meta.gif" />
-				</section>
-				<section>
-					<h4>My experience</h4>
-					<ul>
-						<li>A <span style="font-weight: bold">lot</span> of functionality</li>
-						<li>Multiple classes/functions named the same and are placed in different modules</li>
-						<ul>
-							<li>Can be confusing</li>
-							<li>For example <span style="font-style: italic;">raceN</span></li>
-						</ul>
-					</ul>
-					<img src="images/racen.png" />
-				</section>
-				<section>
-					<ul>
-						<li>Other experiences?</li>
-						<li>Anyone using arrow in real projects?</li>
-						<li>If so, which parts?</li>
-					</ul>
-				</section>
+				</ul>
+				<img src="images/racen.png" />
+			</section>
+			<section>
+				<ul>
+					<li>Other experiences?</li>
+					<li>Anyone using arrow in real projects?</li>
+					<li>If so, which parts?</li>
+				</ul>
+			</section>
+			<section>
+				<h3 style="text-transform: none;">Oslo Kotlin Meetup</h3>
+				<br />
+				<ul>
+					<li style="margin-bottom: 15px">Domain Specific Languages - Marie Katrine Ekeberg</li>
+					<li style="margin-bottom: 15px">kscript, scripting with Kotlin - Anders Mikkelsen</li>
+					<li>Functional programming with Arrow - Jarle Hansen</li>
+				</ul>
+			</section>
 		</div>
 	</div>
 
