@@ -9,9 +9,8 @@
   "license": "MIT",
   "scripts": {
     "test": "gulp test",
-    "start": "gulp serve",
     "build": "gulp",
-    "start-all": "concurrently \"npm run start\" \"../kotlin-compiler-server/gradlew -p ../kotlin-compiler-server bootRun\" \"yarn --cwd ../arrow-playground start\" "
+    "start": "concurrently \"gulp serve\" \"../kotlin-compiler-server/gradlew -p ../kotlin-compiler-server bootRun\" \"yarn --cwd ../arrow-playground start\" "
   },
   "author": {
     "name": "Hakim El Hattab",
